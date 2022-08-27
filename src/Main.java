@@ -1,5 +1,135 @@
 public class Main {
     public static void main(String[] args) {
+//        Задача 1.
+//        На уроке мы проходили разные типы переменных.
+//        Объявите переменные типа int, byte, short, long, float, double.
+//        Название переменных может быть любым, но если состоит из двух слов и более, должно придерживаться правила camelCase.
+//        Выведите в консоль значение каждой переменной в формате "Значение переменной … с типом … равно …"
+        int intType;
+        byte byteType;
+        short shortType;
+        long longType;
+        float floatType;
+        double doubleType;
+
+//        Задача 2.
+//        Ниже дан список различных значений. Инициализируйте переменные, используя изученные ранее типы переменных.
+//        Значения:
+//        27.12 ,  987 678 965 549 , 2,786 , false, 569 , -159 , 27897 , 67.
+//        Объявите переменные всех типов, присвойте им любые значения (инициализируйте их).
+        float fType = 27.12f;
+        long iType = 987_678_965_549L;
+        float fType2 = 2.786f;
+        boolean flag = false;
+        short sType = 569;
+        short sType2 = -159;
+        short sType3 = 27897;
+        byte bType = 67;
+
+//        Задача 3.
+//        Трое школьных учителей, Людмила Павловна, Анна Сергеевна и Екатерина Андреевна, ведут три класса.
+//        У Людмилы Павловны 23 ученика , у Анны Сергеевны 27 учеников и у Екатерины Андреевны – 30 учеников.
+//        Три учительницы закупили все вместе 480 листов бумаги на все три класса. Посчитайте, сколько достанется листов каждому ученику.
+//        Результат задачи выведите в консоль в формате "На каждого ученика рассчитано … листов бумаги".
+        short studentsCountOfLudmila = 23;
+        short studentsCountOfAnna = 27;
+        short studentsCountOfEkaterina = 30;
+        short totalPaper = 480;
+        int totalStudents = studentsCountOfLudmila + studentsCountOfAnna + studentsCountOfEkaterina;
+        float paperPerStudents = (totalPaper * 1.0f) / totalStudents;
+        System.out.println(String.format("На каждого ученика рассчитано %s листов бумаги", paperPerStudents));
+
+//        Задача 4.
+//        Производительность машины для изготовления бутылок - 16 бутылок за 2 минуты. Какая производительность машины будет:
+//        за 20 минут
+//        в сутки
+//        за 3 дня
+//        за 1 месяц
+//        Рассчитывайте продолжительность работы машины в том случае, если она работает без перерыва заданный промежуток времени.
+//        Результаты подсчетов выведите в консоль в формате "За … машины произвела бутылок … штук "
+        byte bottleInTwoMinutes = 16;
+        int bottleInMinute = bottleInTwoMinutes / 2;
+        int bottleInTwentyMinutes = bottleInMinute * 20;
+        int bottleInDay = ((bottleInMinute * 60) * 24);
+        int bottleInThreeDays = bottleInDay * 3;
+        int bottleInMonth = bottleInDay * 30;
+        System.out.println(String.format("За 20 минут машины произвела бутылок %s штук ", bottleInTwentyMinutes));
+        System.out.println(String.format("За сутки машины произвела бутылок %s штук ", bottleInDay));
+        System.out.println(String.format("За 3 дня минут машины произвела бутылок %s штук ", bottleInThreeDays));
+        System.out.println(String.format("За месяц машины произвела бутылок %s штук ", bottleInMonth));
+
+//                Задача 5.
+//        На ремонт школы нужно 120 банок краски двух цветов: белой и коричневой.
+//        На один класс уходит 2 банки белой и 4 банки коричневой краски. Сколько банок каждой краски было куплено?
+//        Выведите результат задачи в консоль в формате "В школе, где … классов, нужно … банок белой краски и … банок коричневой краски".
+        byte totalPaint = 120;
+        byte whitePaintInRoom = 2;
+        byte brownPaintInRoom = 4;
+        int totalRoom = totalPaint / (whitePaintInRoom + brownPaintInRoom);
+        int totalWhitePaint = totalRoom * whitePaintInRoom;
+        int totalBrownPaint = totalRoom * brownPaintInRoom;
+        System.out.println(String.format("В школе, где %s классов, нужно %s банок белой краски и %s банок коричневой краски", totalRoom, totalWhitePaint, totalBrownPaint));
+
+
+//                Задача 6.
+//        Повар, когда готовит еду, взвешивает все продукты, чтобы добиться нужной консистенции.
+//        То же делают и спортсмены, которые сидят на правильном питании и тщательно относятся к тому, что и сколько они едят.
+//        Вот один из рецептов, который использует наш спортсмен перед тренировкой:
+//        Бананы – 5 штук (1 банан - 80 грамм);
+//        Молоко – 200 мл (100 мл = 105 грамм);
+//        Мороженое пломбир – 2 брикета по 100 грамм;
+//        Яйца сырые – 4 яйца (1 яйцо - 70 грамм).
+//                Смешать всё в блендере и готово.
+//                Подсчитайте вес (количество грамм) такого спорт-завтрака, а затем переведите его в килограммы.
+//                Результат напечатайте в консоль.
+//        Важное условие: если в рецепт нужно добавить несколько единиц какого-то продукта (с определенным весом),
+//                то нужно умножать количество единиц на вес в граммах. Например, если в рецепте указано, что нужно добавить 5 бананов по 80 грамм,
+//                то нужно количество (5 бананов) умножить на вес одного (80 грамм), а не считать самому общую сумму грамм.
+        short weightBananas = 5 * 80;
+        short weightMilk = 2 * 105;
+        short weightIceCream = 2 * 100;
+        short weightEagle = 4 * 70;
+        int totalWeight = weightBananas + weightMilk + weightIceCream + weightEagle;
+
+        System.out.println("Вес завтрака " + totalWeight + " гр.");
+        System.out.println("Вес завтрака " + totalWeight / 1000 + " кг " + totalWeight % 1000 + " гр.");
+
+
+//                Задача 7.
+//        Правила соревнований обновились, и теперь нашему спортсмену нужно сбросить 7 кг, чтобы оставаться в своей весовой категории.
+//        Тренер скорректировал рацион так, чтобы спортсмен мог терять в весе от 250 до 500 грамм в день.
+//        Посчитайте, сколько дней уйдёт на похудение, если спортсмен будет терять каждый день по 250 грамм и сколько, если каждый день будет худеть на 500 грамм.
+//        Посчитайте, сколько может потребоваться дней в среднем, чтобы добиться результата похудения.
+        short excessWeight = 7000;
+        int minDays = excessWeight / 250;
+        int maxDays = excessWeight / 500;
+
+        double avgDays = (minDays + maxDays) / (2 * 1.0);
+
+        System.out.println("Максимально, похудение займет " + maxDays + " дней.");
+        System.out.println("Минимально, похудение займет " + minDays + " дней.");
+        System.out.println("В среднем, похудение займет " + avgDays + " дней.");
+
+//                Задача 8.
+//        Отойдем от спорта и представим, что мы работаем в большой компании, штат которой состоит из нескольких сотен сотрудников. В компании есть правило, что чем дольше сотрудник работает в компании, тем ценнее он для бизнеса. Поэтому сотрудники, которые работают в компании дольше 3 лет, получают повышение зарплаты раз в год. Каждый год повышение составляет 10% от текущей зарплаты.
+//        К вам пришел руководитель с задачей автоматизировать повышение зарплаты, а также провести расчет для следующих сотрудников:
+//        Маша получает 67 760 рублей в месяц
+//        Денис получает 83 690 рублей в месяц
+//        Кристина получает 76 230 рублей в месяц
+//        Каждому нужно увеличить зарплату на 10% от текущей месячной. Дополнительно руководитель попросил посчитать разницу между годовым доходом с нынешней зарплатой и после повышения. Посчитайте, сколько будет получать каждый из сотрудников, а также разницу между годовым доходом до и после повышения.
+//        Выведите в консоль информацию по каждому сотруднику.
+//        Например, "Маша теперь получает **** рублей. Годовой доход вырос на **** рублей".
+        int countMasha = 67_760;
+        int countDenis = 83_690;
+        int countChristina = 76_230;
+        int newCountMasha = countMasha + (countMasha / 10);
+        int newCountDenis = countDenis + (countDenis / 10);
+        int newCountChristina = countChristina + (countChristina / 10);
+        System.out.println("Маша теперь получает " + newCountMasha + " рублей. Годовой доход вырос на " + ((newCountMasha * 12) - (countMasha * 12)) + " рублей");
+        System.out.println("Денис теперь получает " + newCountDenis + " рублей. Годовой доход вырос на " + ((newCountDenis * 12) - (countDenis * 12)) + " рублей");
+        System.out.println("Кристина теперь получает " + newCountChristina + " рублей. Годовой доход вырос на " + ((newCountChristina * 12) - (countChristina * 12)) + " рублей");
+
+//        Задачи раздела "Условия домашки"
 //### **Задача 1.**
 //        Ваше первое задание: присвоить переменным разные значения. Для решения этой задачи используйте тип переменной var.
 //        1. dog значение 8;
@@ -23,10 +153,12 @@ public class Main {
         System.out.println(cat);
         System.out.println(paper);
         System.out.println("------------------------------------------");
+//        ### Задание 3
 //        А теперь нужно уменьшить значение каждой переменной:
 //        1. dog уменьшить на 3,5;
 //        2. cat  уменьшить на 1,6;
 //        3. paper уменьшить на  7639;
+//        Для решения этой задачи используйте тип переменной var.
         dog -= 3.5;
         cat -= 1.6;
         paper -= 7639;
@@ -39,6 +171,7 @@ public class Main {
 //        Инициализируйте (=присвойте значение) переменную friend значением 19.
 //        Увеличьте значение переменной на 2, после чего поделите значение на 7.
 //        После каждой операции выводите значение переменной в консоль. В итоге, у вас должно быть выведено 3 значения одной переменной.
+//        Для решения этой задачи используйте тип переменной var.
         var friend = 19;
         System.out.println(friend);
         System.out.println(friend += 2);
@@ -61,9 +194,9 @@ public class Main {
 //        Подсчитайте и выведите в консоль разницу между весами бойцов.  Для решения этой задачи используйте тип переменной var.
         var firstBoxerWeight = 78.2;
         var secondBoxerWeight = 82.7;
-        var totalWeight = firstBoxerWeight + secondBoxerWeight;
+        var totalWeightBoxer = firstBoxerWeight + secondBoxerWeight;
         var differenceWeight = Math.abs(firstBoxerWeight - secondBoxerWeight);
-        System.out.println("Общий вес бойцов = " + totalWeight);
+        System.out.println("Общий вес бойцов = " + totalWeightBoxer);
         System.out.println("Разница в весе бойцов = " + differenceWeight);
         System.out.println("------------------------------------------");
 //        ### Задание 7
@@ -71,8 +204,9 @@ public class Main {
 //        1. Вычитание из большего веса меньшего
 //        2. Используя функцию остаток от деления
         var differenceWeightFirstVariant = firstBoxerWeight > secondBoxerWeight ? (firstBoxerWeight - secondBoxerWeight) : (secondBoxerWeight - firstBoxerWeight);
-//        var differenceWeightSecondVariant = ;
+        var differenceWeightSecondVariant = (firstBoxerWeight / secondBoxerWeight) + (secondBoxerWeight % firstBoxerWeight);
         System.out.println(differenceWeightFirstVariant);
+        System.out.println(differenceWeightSecondVariant);
         System.out.println("------------------------------------------");
 //        ### Задание 8
 //        Решите задачу с помощью функций сложения, вычитания, умножения и деления.
